@@ -1,0 +1,531 @@
+
+<div id="mainDashboard" class="g-sidenav-show" ng-controller="formHealth" ng-init="HealthPageLoad()">
+    <!--<div id="loader" class="loading">Loading&#8230;</div>-->
+
+    <main class="main-content position-relative max-height-vh-100 h-100 border-radius-lg">
+        <!-- Start Navbar -->
+        <div ng-include="'Header.html'"></div>
+
+
+<br/>
+<br/>
+<br/>
+<br/>
+
+<div class="row">
+    <div class="col-lg-3 col-sm-6 h-100" style="padding-right: 0.1px;padding-left: 0.1px;">
+        <div class="card card-stats" style="border-radius: 0rem;">
+            <div class="card-body ">
+                <div class="row">
+                    <div class="card-header p-0" ng-click="EmergencyFundsGoalClick()">
+                        <div class="text-white text-center py-2">
+                            <h6><img class="logoHT" src="images/Image 3@2x.png"> Emergency Fund &nbsp;&nbsp;<img class="logoHT" src="images/sucess.png"></h3>
+                         
+                            <!-- <a href="" class="btn"   style="border: 1px solid;;border-radius: 20px;background: red;color: white;align-items: center;">Inprogress</a> -->
+                        </div>
+                    </div>
+                 
+                </div>
+            </div>
+           
+        </div>
+    </div>
+    <div class="col-lg-3 col-sm-6 h-100" style="padding-right: 0.1px;padding-left: 0.1px;">
+        <div class="card card-stats" style="border-radius: 0rem;">
+            <div class="card-body ">
+                <div class="row">
+                    <div class="card-header p-0" ng-click="HealthFundsGoalClick()">
+                        <div class="text-white text-center py-2">
+                            <h6><img class="logoHT" src="images/Group 11@2x.png" ng-click="HealthFundsGoalClick()"> Health Insurance</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+           
+        </div>
+    </div>
+    <div class="col-lg-3 col-sm-6 h-100" style="padding-right: 0.1px;padding-left: 0.1px;pointer-events: none;opacity: 0.4;">
+        <div class="card card-stats" style="border-radius: 0rem;">
+            <div class="card-body ">
+                <div class="row">
+                    <div class="card-header p-0">
+                        <div class="text-white text-center py-2">
+                            <h6><img class="logoHT" src="images/FutureInvestment.png">Term Insurance</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+          
+        </div>
+    </div>
+    <div class="col-lg-3 col-sm-6 h-100"  style="padding-right: 0.1px;padding-left: 0.1px;pointer-events: none;opacity: 0.4;">
+        <div class="card card-stats" style="border-radius: 0rem;">
+            <div class="card-body ">
+                <div class="row">
+                    <div class="card-header p-0">
+                        <div class="text-white text-center py-2">
+                            <h6><img class="logoHT" src="images/Retiremnetplan.png">Retirement plan</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+        <br /><br />
+        <div class="cotainer card">
+            <div class="card-body">
+                <img style="width: 130px;float: right;margin-top: 20px;" src="images/skipbtn.svg" ng-click="SkipHealthFundClick()">
+         
+                
+            <p class="text-center" style="font-size: xx-large;"><img style="width: 100px;"
+                src="images/Group%2011@2x.png" /> Your 'Health insurance'</p>
+            <p class="text-center">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod labore
+                consectetur adipiscing elit, sed do eiusmod labore et dolore magna aliqua. Ut enim ad minim</p>
+          
+            <div class="cotainer">
+                <div class="col-lg-12 col-sm-12 row">
+                    <div class="col-lg-3 col-sm-3"></div>
+                    <div class="col-lg-6 col-sm-6">
+                        <div class="row">
+                            <span class="col-lg-4 col-sm-4">
+                                <label style="float: right;margin-top: 26px;">Do you have coverage</label>
+                            </span>
+                            <span class="col-lg-3 col-sm-3">
+                                <md-input-container md-no-float class="md-block">
+                                    <md-select ng-model="DoyouhavecoverageModel" placeholder="" required md-no-asterisk="true">
+                                        <md-option value="1">Yes</md-option>
+                                        <md-option value="0">No</md-option>
+                                    </md-select>
+                                </md-input-container>
+                            </span>
+                        </div>
+                        <div class="row" style="margin-top:-12px">
+                            <span class="col-lg-4 col-sm-4">
+                                <label style="float: right;margin-top: 26px;">How much is the current cover</label>
+                            </span>
+                            <span class="col-lg-3 col-sm-3">
+                                <md-input-container md-no-float class="md-block">
+                                    <input type="number" ng-model="CurrentCoverAmountModel" min="0" max="1000000">
+                                </md-input-container>
+                            </span>
+                        </div>
+                        <div class="row" style="margin-top:-20px">
+                            <span class="col-lg-4 col-sm-4">
+                                <label style="float: right;margin-top: 26px;">Do you have dependents</label>
+                            </span>
+                            <span class="col-lg-3 col-sm-3">
+                                <md-input-container md-no-float class="md-block">
+                                    <md-select ng-model="DoyouhavedependentsModel" placeholder="" required md-no-asterisk="true">
+                                        <md-option value="1">Yes</md-option>
+                                        <md-option value="0">No</md-option>
+                                    </md-select>
+                                </md-input-container>
+                            </span>
+                        </div>
+                        <div class="row" style="margin-top:-12px">
+                            <span class="col-lg-4 col-sm-4">
+                                <label style="float: right;margin-top: 26px;">Number of dependents</label>
+                            </span>
+                            <span class="col-lg-3 col-sm-3">
+                                <md-input-container md-no-float class="md-block">
+                                    <input type="number" maxlength="5" ng-change="DependentChange()" ng-model="NumberofdependentsModel" min="0" max="10">
+                                </md-input-container>
+                            </span>
+                        </div>
+
+                        <div class="row FamilyRecord" style="margin-top:-12px" ng-repeat="item in FamilyInputValue">
+                            <!--<span class="FamilyRecord">-->
+                            <span class="col-lg-2 col-sm-2">
+                               
+                            </span>
+                            <span class="col-lg-3 col-sm-3">
+                                <md-input-container md-no-float class="md-block">
+                                    <input type="text" placeholder="Relation" class="RelationValue" ng-model="RelationModel">
+                                </md-input-container>
+                            </span>
+                            <span class="col-lg-2 col-sm-2">
+                                <md-input-container md-no-float class="md-block">
+                                    <input type="number" placeholder="Age" class="AgeValue" ng-model="AgeModel" min="0" max="100">
+                                </md-input-container>
+                            </span>
+                            <!--<span class="col-lg-4 col-sm-4">
+        <md-input-container md-no-float class="md-block">
+            <input type="number" placeholder="Covered" ng-model="CoveredModel">
+        </md-input-container>
+    </span>-->
+                            <span class="col-lg-3 col-sm-3">
+                                <md-input-container md-no-float class="md-block">
+                                    <md-select ng-model="CoveredModel" placeholder="Covered" class="CoveredValue" required md-no-asterisk="true">
+                                        <md-option value="1">Yes</md-option>
+                                        <md-option value="0">No</md-option>
+                                    </md-select>
+                                </md-input-container>
+                            </span>
+                            <!--</span>-->
+                        </div>
+                
+                        
+
+
+                      
+                        </div>
+                        <br/>
+                        <br/>
+                    </div>
+                    <div class="col-lg-3 col-sm-3"></div>
+
+                </div>
+                <br/>
+                <div class="col-md-12 row">
+                    <div class="col-md-2"></div>
+                    <div class="col-md-4">
+                        <a href="" class="btn"   style="border: 1px solid;width: 50%;border-radius: 20px;float: right;" ng-click="BacktoPrevClick()">Go back</a>
+                    </div>
+                    <div class="col-md-4">
+                        <a href="" class="btn"   style="border: 1px solid;width: 50%;border-radius: 20px;background: limegreen;color: white;" ng-click="AddMoreClick()">Add more <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                   
+        
+        
+            </div>
+
+     
+    </div>
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+    </main>
+
+
+
+</div>
+<style>
+    .width30 {
+        width: 30%;
+    }
+
+    .width70 {
+        width: 70%;
+    }
+
+    .floatL {
+        float: left;
+    }
+
+    .width50 {
+        width: 50%;
+    }
+
+    .floatR {
+        float: right;
+    }
+
+    .btn {
+        width: 100%;
+        border-radius: 0px;
+    }
+
+    .width100 {
+        width: 100%;
+    }
+
+    .row {
+        margin-left: -20px;
+        margin-right: -20px;
+
+    }
+
+    .boxStyle {
+        padding: 20px;
+        border-radius: 25px;
+        border-top: 6px solid #dc3545;
+        border-bottom: 6px solid #28a745;
+    }
+
+    .bg-gradient-dark {
+        background-image: linear-gradient(195deg, #182d2e 0%, #182d2e 100%);
+    }
+
+    .btn-primary,
+    .btn.bg-gradient-primary {
+        color: #bce1df;
+        background: #b29a32;
+    }
+
+    .bg-gradient-primary {
+        background-image: linear-gradient(195deg, #bce1df 0%, #bce1df 100%);
+    }
+</style>
+<style>
+    ::-webkit-scrollbar {
+        width: 1px !important;
+    }
+
+    .navbar-vertical.navbar-expand-xs .navbar-collapse {
+        display: block;
+        overflow: auto;
+        height: calc(100vh - 196px);
+    }
+
+    .md-open-menu-container.md-active {
+        opacity: 7;
+        transition: all .4s cubic-bezier(.25, .8, .25, 1);
+        transition-duration: .2s;
+        z-index: 1003;
+    }
+
+    md-icon.md-default-theme,
+    md-icon {
+        color: #b29a32 !important;
+    }
+</style>
+<style>
+    h4 {
+        font-family: "Roboto";
+        font-weight: 500;
+        font-size: 14px;
+        color: #aeaeae;
+        text-transform: uppercase;
+        margin: 0;
+    }
+
+    hr {
+        margin-bottom: 16px;
+        border: 1px solid #eaeaea;
+    }
+
+    .border-card {
+        background: #fff;
+        margin-bottom: 30px;
+        display: flex;
+        align-items: center;
+        font-family: "Roboto";
+        font-size: 14px;
+        padding: 12px 16px;
+        cursor: pointer;
+        border-radius: 4px;
+        border: 1px solid #eaeaea;
+        box-shadow: 0px 2px 1px 0px rgba(0, 0, 0, 0.1);
+        transition: all 0.25s ease;
+    }
+
+    .border-card:hover {
+        -webkit-transform: translateY(-1px);
+        transform: translateY(-1px);
+        box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.1), 0 5px 10px 0 rgba(0, 0, 0, 0.1);
+    }
+
+    .border-card.over {
+        background: rgba(70, 222, 151, 0.15);
+        padding-top: 24px;
+        padding-bottom: 24px;
+        border: 2px solid #47DE97;
+        box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0), 0 5px 10px 0 rgba(0, 0, 0, 0);
+    }
+
+    .border-card.over .card-type-icon {
+        color: #47DE97 !important;
+    }
+
+    .border-card.over p {
+        color: #47DE97 !important;
+    }
+
+    .content-wrapper {
+        display: flex;
+        justify-content: flex-start;
+        width: 100%;
+        white-space: nowrap;
+        overflow: hidden;
+        transition: all 0.25s ease;
+    }
+
+    .min-gap {
+        flex: 0 0 40px;
+    }
+
+    .card-type-icon {
+        flex-grow: 0;
+        flex-shrink: 0;
+        margin-right: 16px;
+        font-weight: 400;
+        color: #323232;
+        border-radius: 50%;
+        width: 40px;
+        height: 40px;
+        text-align: center;
+        line-height: 40px;
+        font-size: 14px;
+        transition: all 0.25s ease;
+    }
+
+    .card-type-icon.with-border {
+        color: #aeaeae;
+        border: 1px solid #eaeaea;
+    }
+
+    .card-type-icon i {
+        line-height: 40px;
+    }
+
+    .label-group {
+        white-space: nowrap;
+        overflow: hidden;
+    }
+
+    .label-group.fixed {
+        flex-shrink: 0;
+    }
+
+    .label-group p {
+        margin: 0px;
+        line-height: 21px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    .label-group p.title {
+        color: #323232;
+        font-weight: 500;
+    }
+
+    .label-group p.title.cta {
+        text-transform: uppercase;
+    }
+
+    .label-group p.caption {
+        font-weight: 400;
+        color: #aeaeae;
+    }
+
+    .end-icon {
+        margin-left: 16px;
+    }
+
+    .dx-texteditor.dx-editor-outlined {
+        background: #fff !important;
+        border: 1px solid #ddd !important;
+        border-right: none !important;
+        border-left: none !important;
+        border-top: none !important;
+        border-radius: 0px !important;
+    }
+
+    .logoHT {
+        height: 40px !important;
+    }
+</style>
+<style>
+    body {
+        padding: 25px;
+    }
+
+    input:focus {
+        outline: none;
+    }
+
+    form {
+        width: 35%;
+        margin-left: auto;
+        margin-right: auto;
+        padding: 50px;
+        background: whitesmoke;
+        border-radius: 5px;
+        position: relative;
+        font-family: 'Libre Franklin', sans-serif;
+    }
+
+    form>div {
+        float: left;
+        margin-bottom: 30px;
+    }
+
+    form>div>p {
+        font-size: 12px;
+        margin-bottom: 3px;
+    }
+
+    form>div>input {
+        font-size: 12px;
+        letter-spacing: 1px;
+        padding: 5px;
+        border: 0;
+        background: whitesmoke;
+        border-bottom: 1px solid silver;
+        width: 100%;
+        color: gray;
+    }
+
+    form>p:last-of-type {
+        text-align: center;
+        padding-top: 50px;
+        display: table;
+        width: 100%;
+        color: white;
+    }
+
+    form>p:last-of-type>a {
+        cursor: pointer;
+        border: 0;
+        padding: 10px 25px;
+        background: silver;
+        border-radius: 28px;
+        font-size: 12px;
+    }
+
+    .term {
+        padding-top: 40px;
+        display: flex;
+        width: 100%;
+        align-items: center;
+    }
+
+    .term>i {
+        cursor: pointer;
+        width: 20px;
+    }
+
+    .term>span {
+        font-size: 12px;
+    }
+
+    /* delete */
+    form>a:last-of-type {
+        position: absolute;
+        bottom: 10px;
+        right: 15px;
+        font-size: 10px;
+        letter-spacing: 1px;
+        font-style: italic;
+    }
+</style>
+<style>
+    .lbl-danger {
+    background-color: rgba(253,57,122,.1);
+    color: #fd397a;
+}
+
+.lbl {
+    padding: .5rem 1rem;
+    border-radius: .2rem;
+    cursor: pointer;
+    transition: all .3s;
+    transition-timing-function: ease-in-out;
+}
+
+</style>

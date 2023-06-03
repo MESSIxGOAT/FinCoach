@@ -1,0 +1,1437 @@
+<div id="mainDashboard" class="g-sidenav-show" ng-controller="AllMainDashboard" ng-init="AllMainDashboardPageLoad()">
+    <!--<div id="loader" class="loading">Loading&#8230;</div>-->
+
+    <main class="main-content position-relative max-height-vh-100 h-100 border-radius-lg">
+        <!-- Start Navbar -->
+        <div ng-include="'Header.html'"></div>
+        <br /><br /><br /><br />
+
+        <div class="row">
+            <br />
+            <div class="col-lg-3 col-sm-6" style="padding-right: 0.1px;padding-left: 0.1px;">
+                <div class="card card-stats" style="border-radius: 0rem;" ng-click="EmergencyFundsGoalClick()">
+                    <div class="card-body ">
+                        <div class="row">
+                            <div class="col-5">
+                                <div class="icon-big text-center icon-warning">
+                                    <img class="logoHT" src="images/Image 3@2x.png" />
+                                </div>
+                            </div>
+                            <div class="col-7">
+                                <div class="numbers">
+                                    <h6>Emergency Funds</h6>
+                                    <h4 class="card-title">100+ plans available</h4>
+                                    <div class="progress progress-md">
+                                        <div class="progress-bar bg-gradient-info w-80" role="progressbar"
+                                             aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <div class="col-lg-3 col-sm-6" style="padding-right: 0.1px;padding-left: 0.1px;">
+                <div class="card card-stats" style="border-radius: 0rem;" ng-click="HealthFundsGoalClick()">
+                    <div class="card-body ">
+                        <div class="row">
+                            <div class="col-5">
+                                <div class="icon-big text-center icon-warning">
+                                    <img class="logoHT" src="images/Group 11@2x.png" />
+                                </div>
+                            </div>
+                            <div class="col-7">
+                                <div class="numbers">
+                                    <h6>Health Insurance</h6>
+                                    <h4 class="card-title">500+ plans available</h4>
+                                    <div class="progress progress-md">
+                                        <div class="progress-bar bg-gradient-danger w-30" role="progressbar"
+                                             aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <div class="col-lg-3 col-sm-6" style="padding-right: 0.1px;padding-left: 0.1px;">
+                <div class="card card-stats" style="border-radius: 0rem;">
+                    <div class="card-body ">
+                        <div class="row">
+                            <div class="col-5">
+                                <div class="icon-big text-center icon-warning">
+                                    <img class="logoHT" src="images/FutureInvestment.png" />
+                                </div>
+                            </div>
+                            <div class="col-7">
+                                <div class="numbers">
+                                    <h6>Term Insurance</h6>
+                                    <h4 class="card-title">200+ plans available</h4>
+                                    <div class="progress progress-md">
+                                        <div class="progress-bar bg-gradient-success w-80" role="progressbar"
+                                             aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <div class="col-lg-3 col-sm-6" style="padding-right: 0.1px;padding-left: 0.1px;">
+                <div class="card card-stats" style="border-radius: 0rem;">
+                    <div class="card-body ">
+                        <div class="row">
+                            <div class="col-5">
+                                <div class="icon-big text-center icon-warning">
+                                    <img class="logoHT" src="images/Retiremnetplan.png" />
+                                </div>
+                            </div>
+                            <div class="col-7">
+                                <div class="numbers">
+                                    <h6>Retirement plan</h6>
+                                    <h4 class="card-title">200+ plans available</h4>
+                                    <div class="progress progress-md">
+                                        <div class="progress-bar bg-gradient-info w-80" role="progressbar"
+                                             aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <!-- End Navbar -->
+        <br />
+        <br />
+        <div class="card">
+            <div class="row">
+                <div class="col-12 col-xl-4 mt-xl-0 mt-4 align-items-center">
+
+                    <div style="text-align: center;">
+                        <div class="icon text-danger">
+                            <i class="pe-7s-graph1"></i>
+                        </div>
+                        <p class="text-md">Where you are now ?</p>
+                        <a href="" class="btn"
+                           style="border: 1px solid;width: 60%;padding: 12px;border-radius: 20px;background: #FF1D15;color: white;">
+                            High
+                            Risk
+                        </a>
+
+                        <p class="description"></p>
+                    </div>
+                </div>
+                <div class="col-12 col-xl-3 mt-xl-0 mt-4 py-4">
+                    <div id="gauge-container">
+                        <!-- <div class="left-section">
+                      <div dx-circular-gauge="options.coolant"></div>
+                      <div dx-circular-gauge="options.rpm"></div>
+                    </div> -->
+                        <div class="center-section">
+                            <div id="gauge" dx-circular-gauge="gaugeOptions"></div>
+                            <!-- <div id="speed-gauge" dx-circular-gauge="options.speed"></div> -->
+                            <!-- <div class="speed-value">
+                          <span class="text-lg" style="margin-left: 16px;font-weight: normal;">High Risk<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{speedValue}}K</span>
+                        </div> -->
+                            <!-- <div id="fuel-gauge" dx-linear-gauge="options.fuel"></div> -->
+                        </div>
+                        <!-- <div class="right-section">
+                      <div dx-circular-gauge="options.psi"></div>
+                      <div dx-circular-gauge="options.instantFuel"></div>
+                    </div> -->
+                    </div>
+                    <!-- <div id="slider" dx-slider="options.slider"></div> -->
+                    <!-- <img style="width:80%" src="images/Image 8@2x.png" /> -->
+                </div>
+                <div class="col-12 col-xl-5 mt-xl-0 mt-4 py-4">
+                    <ul class="list-group">
+                        <li class="list-group-item border-0 d-flex align-items-center px-0 mb-2">
+                            <div class="avatar me-3">
+                                <!--<img src="images/Image 9@2x.png" alt="kal" style="width: 90px;"
+                               class="border-radius-lg">-->
+                            </div>
+                            <div class="d-flex align-items-start flex-column justify-content-center">
+
+                                <p class="mb-0 text-lg"></p>
+                                <h1>Fund details</h1>
+                            </div>
+                            <!-- <a class="btn btn-link pe-3 ps-0 mb-0 ms-auto" href="javascript:;">Reply</a> -->
+                        </li>
+                    </ul>
+                    <div class="row">
+                        <div class="card-body pt-4 p-3 col-xl-6">
+                            <ul class="list-group">
+                                <li class="list-group-item border-0 d-flex p-1 mb-2 bg-gray-100 border-radius-lg">
+                                    <div class="d-flex flex-column">
+                                        <span class="mb-2 text-md p-1">
+                                            Emergency Fund : ₹{{emergencyFundValue}}<span class="font-weight-bold ms-sm-2" style="float: right;color: #96C73C;"></span>
+                                        </span>
+                                        <span class="mb-2 text-md">
+                                            Savings Amount : ₹{{existingAmount}}<span class="ms-sm-2 font-weight-bold" style="float: right;color: #96C73C;"></span>
+                                        </span>
+                                        <span class="text-md">
+                                            Expense Amount : ₹{{expenseAmount}} <span class="ms-sm-2 font-weight-bold" style="float: right;color: #96C73C;"></span>
+                                        </span>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="card-body pt-4 p-3 col-xl-6">
+                            <ul class="list-group">
+                                <li class="list-group-item border-0 d-flex p-1 mb-2 bg-gray-100 border-radius-lg">
+                                    <div class="d-flex flex-column">
+                                        <span class="mb-2 text-md p-1">
+                                            Housing Loan : <span class="font-weight-bold ms-sm-2" style="float: right;color: #FF1D15;"></span> Nil
+                                        </span>
+                                        <span class="mb-2 text-md">
+                                            Personal Loan : <span class="ms-sm-2 font-weight-bold" style="float: right;color: #FF1D15;"></span>Nil
+                                        </span>
+                                        <span class="text-md">
+                                            Others : <span class="ms-sm-2 font-weight-bold" style="float: right;color: #FF1D15;"></span>Nil
+                                        </span>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br />
+
+        <p class="py-4  text-center"
+           style="text-align: left;font: normal normal bold 30px/41px Noto Sans;letter-spacing: 0px;color: #707070;opacity: 1;">
+            Your current status & our first level recommendation
+        </p>
+
+        <div class="row">
+        
+            <div class="col-md-6">
+                <div class="card shadow">
+                    <div class="card gedf-card">
+                        <div class="card-header">
+                          
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div class="mr-2">
+                                        <img class="rounded-circle" width="45" src="images/Group 181@2x.png" alt="">
+                                    </div>
+                                    <div class="ml-2">
+                                        <div class="m-0"
+                                             style="text-align: left;font: normal normal normal 20px/27px Noto Sans;letter-spacing: 0px;color: #575757;opacity: 1;">
+                                            Emergency fund
+                                        </div>
+                                        <!-- <div class="h7 text-muted">Miracles Lee Cross</div> -->
+                                    </div>
+                                 
+                                </div>
+                                <div>
+                                    <div class="card shadow">
+                                        <div class="card-body" style="margin-top: -20px;">
+                                            <h3 style="text-align: center;">Your Minimum Need</h3>
+                                            <p class="card-text">
+
+                                            </p>
+                                            <div class="row">
+                                                <div class="col-lg-6 col-sm-6">
+                                                    <div style="background:#F8F8F8">
+                                                        <div class="card-content">
+                                                            <div class="row">
+                                                                <span class="col-lg-2 col-sm-3 py-4"></span>
+                                                                <span class="col-lg-9 col-sm-8 py-4 text-sm"><br /><h1 style="color: #7EAE27;">₹{{deltaAmount}}</h1> </span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-6 col-sm-6">
+                                                    <div style="background:#F8F8F8">
+                                                        <div class="card-content">
+                                                            <div class="row">
+                                                                <span class="col-lg-3 col-sm-3 py-4"></span>
+                                                                <span class="col-lg-8 col-sm-8 py-4">
+                                                                    <span>Target to reach in</span><br />
+                                                                    <h2>{{noOfMonth}} months </h2>
+                                                                </span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row mt-2">
+                                                <p class="card-text col-md-4">
+                                                    Recommendation 1 completed
+                                                </p>  <p class="card-text col-md-4">
+                                                    Recommendation 2 completed
+                                                </p>  <p class="card-text col-md-4">
+                                                    Recommendation 3 completed
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="card shadow">
+
+                    <div class="card gedf-card">
+                        <div class="card-header">
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div class="mr-2">
+                                        <img class="rounded-circle" width="45" src="images/Group 11@2x.png" alt="">
+                                    </div>
+                                    <div class="ml-2">
+                                        <div class="m-0"
+                                             style="text-align: left;font: normal normal normal 20px/27px Noto Sans;letter-spacing: 0px;color: #575757;opacity: 1;">
+                                            Health insurance
+                                        </div>
+                                        <!-- <div class="h7 text-muted">Miracles Lee Cross</div> -->
+                                    </div>
+                                </div>
+                                <div>
+                                    <div class="card shadow">
+                                        <div class="card-body" style="margin-top: -20px;">
+                                            <h3 style="text-align: center;">Your Minimum Need</h3>
+                                            <p class="card-text">
+
+                                            </p>
+                                            <div class="row">
+                                                <div class="col-lg-6 col-sm-6">
+                                                    <div style="background:#F8F8F8">
+                                                        <div class="card-content">
+                                                            <div class="row">
+                                                                <span class="col-lg-2 col-sm-3 py-4"></span>
+                                                                <span class="col-lg-9 col-sm-8 py-4 text-sm"><br /><h1 style="color: #7EAE27;">₹{{healthInsuranceValue}}</h1> </span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-6 col-sm-6">
+                                                    <div style="background:#F8F8F8">
+                                                        <div class="card-content">
+                                                            <div class="row">
+                                                                <span class="col-lg-3 col-sm-3 py-4"></span>
+                                                                <span class="col-lg-8 col-sm-8 py-4">
+                                                                    <span>Target to reach in</span><br />
+                                                                    <h2>{{noOfMonth}} months </h2>
+                                                                </span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row mt-2">
+                                                <p class="card-text col-md-4">
+                                                    Recommendation 1 completed
+                                                </p>  <p class="card-text col-md-4">
+                                                    Recommendation 2 completed
+                                                </p>  <p class="card-text col-md-4">
+                                                    Recommendation 3 completed
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    
+                    </div>
+
+                </div>
+            </div>
+         
+        </div>
+
+
+
+        <p class="py-4  text-center"
+           style="text-align: left;font: normal normal bold 30px/41px Noto Sans;letter-spacing: 0px;color: #707070;opacity: 1;">
+            Second level recommendation
+        </p>
+
+        <!--<p class="text-center">Based on your current salary info and savings in hand Lorem ipsum dolor sit amet</p>-->
+        <div class="row">
+            <div class="col-md-6">
+                <div class="card shadow">
+                    <div class="card gedf-card">
+                        <div class="card-header">
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div class="mr-2">
+                                        <img class="rounded-circle" width="45" src="images/Retiremnetplan.png" alt="">
+                                    </div>
+                                    <div class="ml-2">
+                                        <div class="m-0"
+                                             style="text-align: left;font: normal normal normal 20px/27px Noto Sans;letter-spacing: 0px;color: #575757;opacity: 1;">
+                                            Retirement plan
+                                        </div>
+                                        <!-- <div class="h7 text-muted">Miracles Lee Cross</div> -->
+                                    </div>
+                                </div>
+                                <div>
+                                    <div class="card shadow">
+                                        <div class="card-body" style="margin-top: -20px;">
+                                            <h3 style="text-align: center;">Your Minimum Need</h3>
+                                            <p class="card-text">
+
+                                            </p>
+                                            <div class="row">
+                                                <div class="col-lg-6 col-sm-6">
+                                                    <div style="background:#F8F8F8">
+                                                        <div class="card-content">
+                                                            <div class="row">
+                                                                <span class="col-lg-2 col-sm-3 py-4"></span>
+                                                                <span class="col-lg-9 col-sm-8 py-4 text-sm"><br /><h1 style="color: #7EAE27;">₹{{retirementValue}}</h1> </span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-6 col-sm-6">
+                                                    <div style="background:#F8F8F8">
+                                                        <div class="card-content">
+                                                            <div class="row">
+                                                                <span class="col-lg-3 col-sm-3 py-4"></span>
+                                                                <span class="col-lg-8 col-sm-8 py-4">
+                                                                    <span>Target to reach in</span><br />
+                                                                    <h2>{{noOfMonth}} months </h2>
+                                                                </span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row mt-2">
+                                                <p class="card-text col-md-4">
+                                                    Recommendation 1 completed
+                                                </p>  <p class="card-text col-md-4">
+                                                    Recommendation 2 completed
+                                                </p>  <p class="card-text col-md-4">
+                                                    Recommendation 3 completed
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="card shadow">
+
+                    <div class="card gedf-card">
+                        <div class="card-header">
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div class="mr-2">
+                                        <img class="rounded-circle" width="45" src="images/Group 114@2x.png" alt="">
+                                    </div>
+                                    <div class="ml-2">
+                                        <div class="m-0"
+                                             style="text-align: left;font: normal normal normal 20px/27px Noto Sans;letter-spacing: 0px;color: #575757;opacity: 1;">
+                                            Term Insurance
+                                        </div>
+                                        <!-- <div class="h7 text-muted">Miracles Lee Cross</div> -->
+                                    </div>
+                                </div>
+                                <div>
+                                    <div class="card shadow">
+                                        <div class="card-body" style="margin-top: -20px;">
+                                            <h3 style="text-align: center;">Your Minimum Need</h3>
+                                            <p class="card-text">
+
+                                            </p>
+                                            <div class="row">
+                                                <div class="col-lg-6 col-sm-6">
+                                                    <div style="background:#F8F8F8">
+                                                        <div class="card-content">
+                                                            <div class="row">
+                                                                <span class="col-lg-2 col-sm-3 py-4"></span>
+                                                                <span class="col-lg-9 col-sm-8 py-4 text-sm"><br /><h1 style="color: #7EAE27;">₹{{termInsuranceValue}}</h1> </span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-6 col-sm-6">
+                                                    <div style="background:#F8F8F8">
+                                                        <div class="card-content">
+                                                            <div class="row">
+                                                                <span class="col-lg-3 col-sm-3 py-4"></span>
+                                                                <span class="col-lg-8 col-sm-8 py-4">
+                                                                    <span>Target to reach in</span><br />
+                                                                    <h2>{{noOfMonth}} months </h2>
+                                                                </span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row mt-2">
+                                                <p class="card-text col-md-4">
+                                                    Recommendation 1 completed
+                                                </p>  <p class="card-text col-md-4">
+                                                    Recommendation 2 completed
+                                                </p>  <p class="card-text col-md-4">
+                                                    Recommendation 3 completed
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                       
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <!--</div>-->
+
+
+
+        <br /><br />
+        <div class="container-fluid py-4">
+            <p class="h3 text-center">My personal & networth details</p>
+            <p class="text-center">
+                Based on your current salary info and savings, lorem ipsum dolor sit amet,
+                consectetur adipiscing elit. Aliquam quis pulvinar
+            </p>
+            <div class="row mt-3">
+                <div class="col-12 col-xl-4 mt-xl-0 mt-4">
+                    <div class="card h-100">
+                        <div class="card-header pb-0 p-3">
+                            <h6 class="mb-0">My details</h6>
+                        </div>
+                        <div class="card-body p-3">
+                            <ul class="list-group">
+                                <li class="list-group-item border-0 d-flex align-items-center px-0 mb-2">
+                                    <div class="avatar me-3">
+                                        <img src="images/Image 34@2x.png" alt="kal" style="border: 1px solid gray;"
+                                             class="border-radius-lg">
+                                    </div>
+                                    <div class="d-flex align-items-start flex-column justify-content-center">
+
+                                        <p class="mb-0 text-xs">Phone number</p>
+                                        <P class="mb-0 text-md">9003145183</h6>
+                                    </div>
+                                    <!-- <a class="btn btn-link pe-3 ps-0 mb-0 ms-auto" href="javascript:;">Reply</a> -->
+                                </li>
+                                <li class="list-group-item border-0 d-flex align-items-center px-0 mb-2">
+                                    <div class="avatar me-3">
+                                        <img src="images/Image 23@2x.png" alt="kal" style="border: 1px solid gray;"
+                                             class="border-radius-lg">
+                                    </div>
+                                    <div class="d-flex align-items-start flex-column justify-content-center">
+                                        <p class="mb-0 text-xs">Family members</p>
+                                        <P class="mb-0 text-md">5</h6>
+                                    </div>
+                                    <!-- <a class="btn btn-link pe-3 ps-0 mb-0 ms-auto" href="javascript:;">Reply</a> -->
+                                </li>
+                                <li class="list-group-item border-0 d-flex align-items-center px-0 mb-2">
+                                    <div class="avatar me-3">
+                                        <img src="images/Image 23@2x.png" alt="kal" style="border: 1px solid gray;"
+                                             class="border-radius-lg">
+                                    </div>
+                                    <div class="d-flex align-items-start flex-column justify-content-center">
+                                        <p class="mb-0 text-xs">Mail id</p>
+                                        <P class="mb-0 text-md">Srinivasan@gmail.com</h6>
+                                    </div>
+                                    <!-- <a class="btn btn-link pe-3 ps-0 mb-0 ms-auto" href="javascript:;">Reply</a> -->
+                                </li>
+                                <li class="list-group-item border-0 d-flex align-items-center px-0 mb-2">
+                                    <div class="avatar me-3">
+                                        <img src="images/Image 23@2x.png" alt="kal" style="border: 1px solid gray;"
+                                             class="border-radius-lg">
+                                    </div>
+                                    <div class="d-flex align-items-start flex-column justify-content-center">
+                                        <p class="mb-0 text-xs">Address</p>
+                                        <P class="mb-0 text-md">124/a, Ganapathy nagar...</h6>
+                                    </div>
+                                    <!-- <a class="btn btn-link pe-3 ps-0 mb-0 ms-auto" href="javascript:;">Reply</a> -->
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-xl-4 mt-xl-0 mt-4">
+                    <div class="card h-100">
+                        <div class="card-header pb-0 p-3">
+                            <h6 class="mb-0">My Assets</h6>
+                        </div>
+                        <div class="card-body p-3">
+                            <ul class="list-group">
+                                <li class="list-group-item border-0 d-flex align-items-center px-0 mb-2">
+                                    <div class="avatar me-3">
+                                        <img src="images/Image 23@2x.png" alt="kal" style="border: 1px solid gray;"
+                                             class="border-radius-lg">
+                                    </div>
+                                    <div class="d-flex align-items-start flex-column justify-content-center">
+
+                                        <p class="mb-0 text-xs">Own house</p>
+                                        <P class="mb-0 text-md">2 houses, value ₹70,00,000</h6>
+                                    </div>
+                                    <!-- <a class="btn btn-link pe-3 ps-0 mb-0 ms-auto" href="javascript:;">Reply</a> -->
+                                </li>
+
+                                <li class="list-group-item border-0 d-flex align-items-center px-0 mb-2">
+                                    <div class="avatar me-3">
+                                        <img src="images/Image 17@2x.png" alt="kal" style="border: 1px solid gray;"
+                                             class="border-radius-lg">
+                                    </div>
+                                    <div class="d-flex align-items-start flex-column justify-content-center">
+                                        <p class="mb-0 text-xs">Own car</p>
+                                        <P class="mb-0 text-md">Hyundai Verna, current value ₹10,00,000</h6>
+                                    </div>
+                                    <!-- <a class="btn btn-link pe-3 ps-0 mb-0 ms-auto" href="javascript:;">Reply</a> -->
+                                </li>
+                                <li class="list-group-item border-0 d-flex align-items-center px-0 mb-2">
+                                    <div class="avatar me-3">
+                                        <img src="images/Image 18@2x.png" alt="kal" style="border: 1px solid gray;"
+                                             class="border-radius-lg">
+                                    </div>
+                                    <div class="d-flex align-items-start flex-column justify-content-center">
+                                        <p class="mb-0 text-xs">Land</p>
+                                        <P class="mb-0 text-md">2 lands 3000 sqr feet, value ₹30,00,000</h6>
+                                    </div>
+                                    <!-- <a class="btn btn-link pe-3 ps-0 mb-0 ms-auto" href="javascript:;">Reply</a> -->
+                                </li>
+                                <li class="list-group-item border-0 d-flex align-items-center px-0 mb-2">
+                                    <div class="avatar me-3">
+                                        <img src="images/Image 34@2x.png" alt="kal" style="border: 1px solid gray;"
+                                             class="border-radius-lg">
+                                    </div>
+                                    <div class="d-flex align-items-start flex-column justify-content-center">
+                                        <p class="mb-0 text-xs">Cash on hand</p>
+                                        <P class="mb-0 text-md">₹1,16,000, 2 banks</h6>
+                                    </div>
+                                    <!-- <a class="btn btn-link pe-3 ps-0 mb-0 ms-auto" href="javascript:;">Reply</a> -->
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-xl-4 mt-xl-0 mt-4">
+                    <div class="card h-100">
+                        <div class="card-header pb-0 p-3">
+                            <h6 class="mb-0">My Liability</h6>
+                        </div>
+                        <div class="card-body p-3">
+                            <ul class="list-group">
+                                <li class="list-group-item border-0 d-flex align-items-center px-0 mb-2">
+                                    <div class="avatar me-3">
+                                        <img src="images/Image 23@2x.png" alt="kal" style="border: 1px solid gray;"
+                                             class="border-radius-lg">
+                                    </div>
+                                    <div class="d-flex align-items-start flex-column justify-content-center">
+
+                                        <p class="mb-0 text-xs">Housing loan</p>
+                                        <P class="mb-0 text-md">₹30,00,000, EMI remain 36 months</h6>
+                                    </div>
+                                    <!-- <a class="btn btn-link pe-3 ps-0 mb-0 ms-auto" href="javascript:;">Reply</a> -->
+                                </li>
+                                <li class="list-group-item border-0 d-flex align-items-center px-0 mb-2">
+                                    <div class="avatar me-3">
+                                        <img src="images/Image 24@2x.png" alt="kal" style="border: 1px solid gray;"
+                                             class="border-radius-lg">
+                                    </div>
+                                    <div class="d-flex align-items-start flex-column justify-content-center">
+                                        <p class="mb-0 text-xs">Car loan</p>
+                                        <P class="mb-0 text-md">₹10,00,000, EMI remain 24 months</h6>
+                                    </div>
+                                    <!-- <a class="btn btn-link pe-3 ps-0 mb-0 ms-auto" href="javascript:;">Reply</a> -->
+                                </li>
+                                <li class="list-group-item border-0 d-flex align-items-center px-0 mb-2">
+                                    <div class="avatar me-3">
+                                        <img src="images/Image 25@2x.png" alt="kal" style="border: 1px solid gray;"
+                                             class="border-radius-lg">
+                                    </div>
+                                    <div class="d-flex align-items-start flex-column justify-content-center">
+                                        <p class="mb-0 text-xs">Personal loan</p>
+                                        <P class="mb-0 text-md">₹3,00,000, EMI remain 12 months</h6>
+                                    </div>
+                                    <!-- <a class="btn btn-link pe-3 ps-0 mb-0 ms-auto" href="javascript:;">Reply</a> -->
+                                </li>
+                                <li class="list-group-item border-0 d-flex align-items-center px-0 mb-2">
+                                    <div class="avatar me-3">
+                                        <img src="images/Image 35@2x.png" alt="kal" style="border: 1px solid gray;"
+                                             class="border-radius-lg">
+                                    </div>
+                                    <div class="d-flex align-items-start flex-column justify-content-center">
+                                        <p class="mb-0 text-xs">Credit card balance</p>
+                                        <P class="mb-0 text-md">₹36,000, due date 15th September 2022</h6>
+                                    </div>
+                                    <!-- <a class="btn btn-link pe-3 ps-0 mb-0 ms-auto" href="javascript:;">Reply</a> -->
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+
+
+        <!-- footer start -->
+        <div ng-include="'Footer.html'"></div>
+        <!-- footer end -->
+
+        <div class="fixed-plugin ps">
+            <!-- <a class="fixed-plugin-button text-dark position-fixed px-3 py-2">
+            <i class="fa fa-cog py-2" aria-hidden="true"> </i>
+        </a> -->
+            <div class="card shadow-lg">
+                <div class="card-header pb-0 pt-3 bg-transparent ">
+                    <div class="float-start">
+                        <h5 class="mt-3 mb-0">Login</h5>
+                        <!-- <p>See our dashboard options.</p> -->
+                    </div>
+                    <div class="float-end mt-4">
+                        <button class="btn btn-link text-dark p-0 fixed-plugin-close-button" ng-click="CloseFnc()">
+                            <i class="fa fa-close" aria-hidden="true"></i>
+                        </button>
+                    </div>
+
+                </div>
+                <hr class="horizontal dark my-1">
+                <div class="card-body pt-sm-3 pt-0 overflow-auto">
+                    <!--
+                <div>
+                    <h6 class="mb-0">Sidebar Colors</h6>
+                </div>
+                <a href="javascript:void(0)" class="switch-trigger background-color">
+                    <div class="badge-colors my-2 text-start">
+                        <span class="badge filter bg-gradient-primary active" data-color="primary"
+                            onclick="sidebarColor(this)"></span>
+                        <span class="badge filter bg-gradient-dark" data-color="dark"
+                            onclick="sidebarColor(this)"></span>
+                        <span class="badge filter bg-gradient-info" data-color="info"
+                            onclick="sidebarColor(this)"></span>
+                        <span class="badge filter bg-gradient-success" data-color="success"
+                            onclick="sidebarColor(this)"></span>
+                        <span class="badge filter bg-gradient-warning" data-color="warning"
+                            onclick="sidebarColor(this)"></span>
+                        <span class="badge filter bg-gradient-danger" data-color="danger"
+                            onclick="sidebarColor(this)"></span>
+                    </div>
+                </a> -->
+                    <!-- <div class="mt-3">
+                    <h6 class="mb-0">Sidenav Type</h6>
+                    <p class="text-sm">Choose between 2 different sidenav types.</p>
+                </div>
+                <div class="d-flex">
+                    <button class="btn bg-gradient-primary w-100 px-3 mb-2 active me-2" data-class="bg-white"
+                        onclick="sidebarType(this)">White</button>
+                    <button class="btn bg-gradient-primary w-100 px-3 mb-2" data-class="bg-default"
+                        onclick="sidebarType(this)">Dark</button>
+                </div> -->
+                    <p class="text-sm d-xl-none d-block mt-2">You can change the sidenav type just on desktop view.</p>
+
+                    <div class="d-flex my-3">
+                        <!-- <h6 class="mb-0">Navbar Fixed</h6>
+                    <div class="form-check form-switch ps-0 ms-auto my-auto">
+                        <input class="form-check-input mt-1 ms-auto" type="checkbox" id="navbarFixed"
+                            onclick="navbarFixed(this)">
+                    </div> -->
+                        <!-- <md-input-container md-no-float class="md-block">
+                      <md-icon md-svg-src="img/icons/ic_phone_24px.svg"></md-icon>
+                      <input ng-model="user.phone" type="text" placeholder="Phone Number" aria-label="Phone Number">
+                    </md-input-container> -->
+
+
+                    </div>
+                    <hr class="horizontal dark mb-1">
+                    <div class="d-flex my-4">
+                        <h6 class="mb-0">User Name</h6>
+                        <div class="form-check form-switch ps-0 ms-auto my-auto">
+                            <input style="border: none;border-bottom: 1px solid gray;">
+                        </div>
+                    </div>
+                    <hr class="horizontal dark my-sm-4">
+                    <div class="mt-2 mb-5 d-flex">
+                        <h6 class="mb-0">Password</h6>
+                        <div class="form-check form-switch ps-0 ms-auto my-auto">
+                            <input style="border: none;border-bottom: 1px solid gray;">
+                        </div>
+                    </div>
+                    <a class="btn btn-outline-dark w-100" ng-click="LoginActivate()">
+                        Login
+                    </a>
+                    <span>
+                        Looking to
+                        <a href="javascript: showRegisterForm();" rel="nofollow" ng-click="CreateAccount()"
+                           style="color: #e91e63;">create an account</a>
+                        ?
+                    </span>
+                    <hr class="horizontal dark my-1">
+
+                    <!-- <a class="btn btn-primary w-100" href="https://www.creative-tim.com/product/argon-dashboard-pro">Buy
+                now</a> -->
+
+                    <a href="https://www.facebook.com/sharer/sharer.php?u=https://www.creative-tim.com/product/argon-dashboard-pro"
+                       class="btn btn-dark w-100" target="_blank">
+                        <i class="fab fa-facebook-square me-1" aria-hidden="true"></i> Share
+                    </a>
+
+                    <a href="https://www.facebook.com/sharer/sharer.php?u=https://www.creative-tim.com/product/argon-dashboard-pro"
+                       class="btn bg-gradient-danger w-100" target="_blank">
+                        <i class="fab fa-google me-1" aria-hidden="true"></i> Google
+                    </a>
+
+
+                    <!-- <div class="w-100 text-center">
+                    <span></span>
+                    <h6 class="mt-3">Thank you for sharing!</h6>
+                    <a href="https://twitter.com/intent/tweet?text=Check%20Argon%20Dashboard%20PRO%20made%20by%20%40CreativeTim%20%23webdesign%20%23dashboard%20%23bootstrap5&amp;url=https%3A%2F%2Fwww.creative-tim.com%2Fproduct%2Fargon-dashboard-pro"
+                        class="btn btn-dark mb-0 me-2" target="_blank">
+                        <i class="fab fa-twitter me-1" aria-hidden="true"></i> Tweet
+                    </a>
+                    <a href="https://www.facebook.com/sharer/sharer.php?u=https://www.creative-tim.com/product/argon-dashboard-pro"
+                        class="btn btn-dark mb-0 me-2" target="_blank">
+                        <i class="fab fa-facebook-square me-1" aria-hidden="true"></i> Share
+                    </a>
+                </div> -->
+                </div>
+            </div>
+            <!-- <div class="ps__rail-x" style="left: 0px; bottom: 0px;">
+            <div class="ps__thumb-x" tabindex="0" style="left: 0px; width: 0px;"></div>
+        </div>
+        <div class="ps__rail-y" style="top: 0px; right: 0px;">
+            <div class="ps__thumb-y" tabindex="0" style="top: 0px; height: 0px;"></div>
+        </div> -->
+        </div>
+
+
+    </main>
+
+</div>
+
+<br />
+
+
+<style>
+    .bg-gradient-dark {
+        background-image: linear-gradient(195deg, #182d2e 0%, #182d2e 100%);
+    }
+
+    .btn-primary,
+    .btn.bg-gradient-primary {
+        color: #bce1df;
+        background: #b29a32;
+    }
+
+    .bg-gradient-primary {
+        background-image: linear-gradient(195deg, #bce1df 0%, #bce1df 100%);
+    }
+</style>
+<style>
+    ::-webkit-scrollbar {
+        width: 1px !important;
+    }
+
+    .navbar-vertical.navbar-expand-xs .navbar-collapse {
+        display: block;
+        overflow: auto;
+        height: calc(100vh - 196px);
+    }
+
+    .md-open-menu-container.md-active {
+        opacity: 7;
+        transition: all .4s cubic-bezier(.25, .8, .25, 1);
+        transition-duration: .2s;
+        z-index: 1003;
+    }
+
+    md-icon.md-default-theme,
+    md-icon {
+        color: #b29a32 !important;
+    }
+</style>
+<style>
+    h4 {
+        font-family: "Roboto";
+        font-weight: 500;
+        font-size: 14px;
+        color: #aeaeae;
+        text-transform: uppercase;
+        margin: 0;
+    }
+
+    hr {
+        margin-bottom: 16px;
+        border: 1px solid #eaeaea;
+    }
+
+    .border-card {
+        background: #fff;
+        margin-bottom: 30px;
+        display: flex;
+        align-items: center;
+        font-family: "Roboto";
+        font-size: 14px;
+        padding: 12px 16px;
+        cursor: pointer;
+        border-radius: 4px;
+        border: 1px solid #eaeaea;
+        box-shadow: 0px 2px 1px 0px rgba(0, 0, 0, 0.1);
+        transition: all 0.25s ease;
+    }
+
+    .border-card:hover {
+        -webkit-transform: translateY(-1px);
+        transform: translateY(-1px);
+        box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.1), 0 5px 10px 0 rgba(0, 0, 0, 0.1);
+    }
+
+    .border-card.over {
+        background: rgba(70, 222, 151, 0.15);
+        padding-top: 24px;
+        padding-bottom: 24px;
+        border: 2px solid #47DE97;
+        box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0), 0 5px 10px 0 rgba(0, 0, 0, 0);
+    }
+
+    .border-card.over .card-type-icon {
+        color: #47DE97 !important;
+    }
+
+    .border-card.over p {
+        color: #47DE97 !important;
+    }
+
+    .content-wrapper {
+        display: flex;
+        justify-content: flex-start;
+        width: 100%;
+        white-space: nowrap;
+        overflow: hidden;
+        transition: all 0.25s ease;
+    }
+
+    .min-gap {
+        flex: 0 0 40px;
+    }
+
+    .card-type-icon {
+        flex-grow: 0;
+        flex-shrink: 0;
+        margin-right: 16px;
+        font-weight: 400;
+        color: #323232;
+        border-radius: 50%;
+        width: 40px;
+        height: 40px;
+        text-align: center;
+        line-height: 40px;
+        font-size: 14px;
+        transition: all 0.25s ease;
+    }
+
+    .card-type-icon.with-border {
+        color: #aeaeae;
+        border: 1px solid #eaeaea;
+    }
+
+    .card-type-icon i {
+        line-height: 40px;
+    }
+
+    .label-group {
+        white-space: nowrap;
+        overflow: hidden;
+    }
+
+    .label-group.fixed {
+        flex-shrink: 0;
+    }
+
+    .label-group p {
+        margin: 0px;
+        line-height: 21px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    .label-group p.title {
+        color: #323232;
+        font-weight: 500;
+    }
+
+    .label-group p.title.cta {
+        text-transform: uppercase;
+    }
+
+    .label-group p.caption {
+        font-weight: 400;
+        color: #aeaeae;
+    }
+
+    .end-icon {
+        margin-left: 16px;
+    }
+
+    .dx-texteditor.dx-editor-outlined {
+        background: #fff !important;
+        border: 1px solid #ddd !important;
+        border-right: none !important;
+        border-left: none !important;
+        border-top: none !important;
+        border-radius: 0px !important;
+    }
+
+    .logoHT {
+        height: 93px !important;
+    }
+</style>
+<style>
+    input:focus {
+        outline: none;
+    }
+
+    form {
+        width: 35%;
+        margin-left: auto;
+        margin-right: auto;
+        padding: 50px;
+        background: whitesmoke;
+        border-radius: 5px;
+        position: relative;
+        font-family: 'Libre Franklin', sans-serif;
+    }
+
+    form>div {
+        float: left;
+        margin-bottom: 30px;
+    }
+
+    form>div>p {
+        font-size: 12px;
+        margin-bottom: 3px;
+    }
+
+    form>div>input {
+        font-size: 12px;
+        letter-spacing: 1px;
+        padding: 5px;
+        border: 0;
+        background: whitesmoke;
+        border-bottom: 1px solid silver;
+        width: 100%;
+        color: gray;
+    }
+
+    form>p:last-of-type {
+        text-align: center;
+        padding-top: 50px;
+        display: table;
+        width: 100%;
+        color: white;
+    }
+
+    form>p:last-of-type>a {
+        cursor: pointer;
+        border: 0;
+        padding: 10px 25px;
+        background: silver;
+        border-radius: 28px;
+        font-size: 12px;
+    }
+
+    .term {
+        padding-top: 40px;
+        display: flex;
+        width: 100%;
+        align-items: center;
+    }
+
+    .term>i {
+        cursor: pointer;
+        width: 20px;
+    }
+
+    .term>span {
+        font-size: 12px;
+    }
+
+    /* delete */
+    form>a:last-of-type {
+        position: absolute;
+        bottom: 10px;
+        right: 15px;
+        font-size: 10px;
+        letter-spacing: 1px;
+        font-style: italic;
+    }
+</style>
+<style>
+    .button,
+    .button-primary,
+    .button-secondary {
+        display: inline-block;
+        text-decoration: none;
+        font-size: 13px;
+        line-height: 26px;
+        height: 28px;
+        margin: 0;
+        padding: 0 10px 1px;
+        cursor: pointer;
+        border-width: 1px;
+        border-style: solid;
+        -webkit-appearance: none;
+        -webkit-border-radius: 3px;
+        border-radius: 3px;
+        white-space: nowrap;
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+    }
+
+    .button,
+    .button-secondary {
+        color: #555;
+        border-color: #CCC;
+        background: #F7F7F7;
+        -webkit-box-shadow: inset 0 1px 0 #FFF, 0 1px 0 rgba(0, 0, 0, 0.08);
+        box-shadow: inset 0 1px 0 #FFF, 0 1px 0 rgba(0, 0, 0, 0.08);
+        vertical-align: top;
+    }
+
+    .plugin-card {
+        /* float: left; */
+        margin: 0 8px 16px;
+        /* width: 550px; */
+        /*width: 48.5%;
+width: -webkit-calc( 50% - 8px );
+width: calc( 50% - 8px );*/
+        background-color: #FFF;
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+    }
+
+    /* Front */
+
+    .plugin-card-top {
+        position: relative;
+        padding: 20px 20px 10px;
+        min-height: 135px;
+        background: #fff;
+    }
+
+    .plugin-icon {
+        position: absolute;
+        top: 20px;
+        left: 20px;
+        width: 101px;
+        height: 108px;
+        margin: 0 20px 20px 0;
+    }
+
+    .plugin-card .name,
+    .plugin-card .desc {
+        margin-left: 148px;
+        /* margin-right: 120px; */
+    }
+
+    .plugin-card h4 {
+        margin: 0 0 12px;
+        font-size: 18px;
+        line-height: 1.3;
+        font-weight: 600;
+    }
+
+    .plugin-card h4 a {
+        text-decoration: none;
+    }
+
+    .plugin-card .action-links {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        width: 120px;
+    }
+
+    .plugin-action-buttons {
+        clear: right;
+        float: right;
+        margin-left: 2em;
+        margin-bottom: 1em;
+        text-align: right;
+    }
+
+    div.action-links,
+    .plugin-action-buttons {
+        margin: 0;
+    }
+
+    .plugin-action-buttons li {
+        margin-bottom: 10px;
+    }
+
+    .plugin-card-bottom {
+        clear: both;
+        padding: 12px 20px;
+        background-color: #FAFAFA;
+        border-top: 1px solid #DEDEDE;
+        overflow: hidden;
+    }
+
+    .plugin-card .column-rating,
+    .plugin-card .column-downloaded {
+        float: left;
+        clear: left;
+        max-width: 180px;
+    }
+
+    .plugin-card .column-rating,
+    .plugin-card .column-updated {
+        margin-bottom: 4px;
+    }
+
+    .plugin-card .column-rating {
+        line-height: 23px;
+    }
+
+    .plugin-card .column-updated,
+    .plugin-card .column-compatibility {
+        text-align: right;
+        float: right;
+        clear: right;
+        width: 65%;
+        width: -webkit-calc(100% - 180px);
+        width: calc(100% - 180px);
+    }
+
+    .plugin-card-bottom .star-rating {
+        display: inline;
+    }
+
+    .star-rating .star {
+        color: #E14D43;
+    }
+
+    .star-rating .star {
+        display: inline-block;
+        width: 20px;
+        height: 20px;
+        -webkit-font-smoothing: antialiased;
+        font-size: 20px;
+        line-height: 1;
+        font-family: 'dashicons';
+        text-decoration: inherit;
+        font-weight: normal;
+        font-style: normal;
+        vertical-align: top;
+        -webkit-transition: color .1s ease-in 0;
+        transition: color .1s ease-in 0;
+        text-align: center;
+        color: #0074A2;
+    }
+
+    /* Back */
+
+    .plugin-card-back {
+        padding: 20px 20px 10px;
+        width: 550px;
+        min-height: 252px;
+        background: #fff;
+    }
+
+    /* Flipping */
+
+    .plugin-card {
+        perspective: 1000;
+    }
+
+    /*.plugin-card:hover .plugin-card-flipper,*/
+    .plugin-card.flip .plugin-card-flipper {
+        transform: rotateY(180deg);
+    }
+
+    .plugin-card-flipper {
+        transition: 0.6s;
+        transform-style: preserve-3d;
+        position: relative;
+    }
+
+    .plugin-card-front,
+    .plugin-card-back {
+        backface-visibility: hidden;
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+
+    .plugin-card-front {
+        z-index: 2;
+        /* for firefox 31 */
+        transform: rotateY(0deg);
+    }
+
+    .plugin-card-back {
+        transform: rotateY(180deg);
+    }
+
+    /* Spinner */
+
+    .pie {
+        position: absolute;
+        top: 20px;
+        left: 20px;
+        width: 128px;
+        height: 128px;
+        margin: 0 20px 20px 0;
+        -webkit-border-radius: 50%;
+        border-radius: 50%;
+        background-image: -webkit-linear-gradient(0deg, #0074d9 50%, #7fdbff 0);
+        background-image: -moz-linear-gradient(0deg, #0074d9 50%, #7fdbff 0);
+        background-image: linear-gradient(90deg, #0074d9 50%, #7fdbff 0);
+        overflow: hidden;
+        -webkit-animation: bg 10s step-end infinite;
+        -moz-animation: bg 10s step-end infinite;
+        animation: bg 10s step-end infinite;
+    }
+
+    .pie:before {
+        background: #0074d9;
+        -webkit-border-radius: 0 100% 100% 0/50%;
+        border-radius: 0 100% 100% 0/50%;
+        display: block;
+        width: 50%;
+        height: 100%;
+        content: '';
+        margin-left: 50%;
+        -webkit-transform-origin: 0%;
+        -moz-transform-origin: 0%;
+        transform-origin: 0%;
+        -webkit-animation: spin 2.5s linear infinite, color-spin 10s step-end infinite;
+        -moz-animation: spin 2.5s linear infinite, color-spin 10s step-end infinite;
+        animation: spin 2.5s linear infinite, color-spin 10s step-end infinite;
+    }
+</style>
+<style>
+    #gauge-demo {
+  height: 500px;
+}
+
+#gauge-container {
+  text-align: center;
+  margin: 20px auto;
+  background-image: url('images/Gauges/mask.png');
+  background-repeat: no-repeat;
+  width: 786px;
+  height: 500px;
+}
+
+#gauge-container > div {
+  display: inline-block;
+  position: relative;
+}
+
+.left-section {
+  top: -20px;
+  left: -40px;
+}
+
+.center-section {
+  top: 25px;
+}
+
+.right-section {
+  top: -20px;
+  right: -40px;
+}
+
+.speed-value {
+  position: absolute;
+  border: 2px solid #f05b41;
+  border-radius: 50%;
+  width: 110px;
+  height: 110px;
+  left: 28%;
+  top: 36%;
+  line-height: 100px;
+}
+
+.speed-value > span {
+  font-size: 50px;
+  font-weight: lighter;
+  color: #f05b41;
+}
+
+#fuel-gauge {
+  position: absolute;
+  left: 34%;
+  bottom: 5%;
+}
+
+#slider {
+  position: relative;
+  top: -105px;
+  margin: 0 auto;
+}
+
+#slider .dx-slider-bar {
+  background-color: #fff;
+}
+
+#slider .dx-slider-handle {
+  background-color: #f05b41;
+  width: 16px;
+  height: 16px;
+  margin-top: -8px;
+  margin-right: -8px;
+  border-radius: 50%;
+  border: none;
+}
+
+#slider .dx-slider-handle .dx-inkripple-wave {
+  background: none;
+}
+
+#slider .dx-slider-handle::after {
+  background-color: #f05b41;
+}
+
+#slider .dx-slider-range.dx-slider-range-visible {
+  border-color: #f05b41;
+  background-color: #f05b41;
+}
+
+.left-section{
+    display: none !important;
+}
+.right-section{
+    display: none  !important;
+}
+#fuel-gauge {
+    display: none;
+}
+#gauge-container {
+    text-align: left !important;
+    margin: -23px 34px  !important;
+    /* background-image: url(images/Gauges/mask.png); */
+    /* background-repeat: no-repeat; */
+    width: -1px !important;
+    height: 3px !important;
+}
+
+</style>

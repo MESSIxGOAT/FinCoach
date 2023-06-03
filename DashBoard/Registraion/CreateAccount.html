@@ -1,0 +1,109 @@
+<div class="window" ng-controller="CreateAccount">
+
+    <div class="header">
+       <img style="width: 280px;margin-top: 27px;" src="images/Group 67@2x.png">
+    </div>
+    <div class="footer">
+      <p class="py-2 h5">Create your account</p>
+
+        <div class="container">
+        <md-input-container md-no-float class="md-block">
+            <input type="text"  placeholder="First Name" ng-model="FirstNameModel"  aria-label="Phone Number">
+        </md-input-container>
+        <md-input-container md-no-float class="md-block">
+            <input type="text"  placeholder="Last Name" ng-model="LastNameModel"   aria-label="Phone Number">
+        </md-input-container>
+        <md-input-container md-no-float class="md-block">
+            <input type="text"   placeholder="Email ID" ng-model="EmailIdModel"  aria-label="Phone Number">
+        </md-input-container>
+        <md-input-container md-no-float class="md-block">
+            <input type="text" placeholder="Mobile Number" ng-model="MobileNumberModel"  aria-label="Phone Number" maxlength="10" numbers-Only>
+        </md-input-container>
+
+        <md-input-container md-no-float class="md-block">
+            <input type="password" placeholder="Password" ng-model="PasswordModel"  aria-label="Phone Number">
+        </md-input-container>
+        <md-input-container md-no-float class="md-block">
+            <input type="password" placeholder="Confirm Password" ng-model="ConfirmPasswordModel"  aria-label="Phone Number">
+        </md-input-container>
+    </div>
+    <br/><br/>
+        <a href="" class="btn"   style="border: 1px solid;width: 80%;border-radius: 20px;background: #1084BE;color: white;" ng-click="LoginActivate()">Create account</a>
+       
+    </div>
+</div>
+
+
+
+
+
+
+<style class="cp-pen-styles">
+  
+
+    .btn:hover {
+        background: rgba(0, 0, 0, 0.1);
+        border: 1px solid rgba(0, 0, 0, 0.15);
+    }
+
+
+
+    .window {
+        margin-left: 40%;
+        position: absolute;
+        height: 100%;
+        top: 0;
+        width: 400px;
+    }
+
+    .header {
+        background: #5F5F5F;
+        color: #FFF;
+        height: 166px;
+        left: 0;
+        position: absolute;
+        text-align: center;
+        top: 0;
+        width: inherit;
+    }
+
+   
+    .footer {
+        background: white;
+        bottom: 0;
+        color: #FFF;
+        left: 0;
+        position: absolute;
+        text-align: center;
+        top: 124px;
+        width: inherit;
+    }
+
+    .footer ul {
+        display: flex;
+        font-size: 16px;
+        font-weight: 400;
+        height: 40px;
+        line-height: 40px;
+        padding: 20px 20px;
+    }
+
+    .footer li:first-child {
+        border: 0;
+    }
+
+    .footer li {
+        border-left: 2px solid rgba(255, 255, 255, .15);
+        font-family: 'Quicksand', sans-serif;
+        padding: 0 4px 0 6px;
+        width: 100%;
+    }
+
+    .footer a span {
+        color: #9CDFF5;
+        display: inline-block;
+        font-size: 26px;
+        padding: 0 4px 0 0;
+        vertical-align: middle;
+    }
+</style>

@@ -1,0 +1,608 @@
+<div id="mainDashboard" class="g-sidenav-show" ng-controller="DashboardCtrl" ng-init="DashboardPageLoad()">
+    <!--<div id="loader" class="loading">Loading&#8230;</div>-->
+
+    <main class="main-content position-relative max-height-vh-100 h-100 border-radius-lg">
+        <div ng-include="'DashboardHeader.html'"></div>
+        <br /><br /><br /><br />
+
+        <div class="container-fluid home-content1">
+            <div class="row">
+                <div class="col-md-6 login-form-1">
+                    <h3>Login Form 1</h3>
+
+
+
+                </div>
+                <div class="col-md-6 login-form-2">
+                    <div class="login-logo">
+                        <!--<img src="images/letstart.PNG" alt="" ng-click="LetsStartClick()" />-->
+                        <img style="height: 75px;" src="images/letstart.PNG" ng-click="LetsStartClick()" />
+                    </div>
+                    </div>
+                    <h3>Login Form 2</h3>
+
+                </div>
+            </div>
+
+
+            <p class="py-4  text-center"
+                style="text-align: left;font: normal normal bold 30px/41px Noto Sans;letter-spacing: 0px;color: #707070;opacity: 1;">
+                Your current status & our first level recommendation</p>
+
+            <div class="row">
+            <div class="col-md-1"></div>
+                <div class="col-md-5">
+                    <div class="card shadow">
+                        <div class="card gedf-card">
+                            <div class="card-header">
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <div class="mr-2">
+                                            <img class="rounded-circle" width="45" src="images/Group 181@2x.png" alt="">
+                                        </div>
+                                        <div class="ml-2">
+                                            <div class="m-0"
+                                                style="text-align: left;font: normal normal normal 20px/27px Noto Sans;letter-spacing: 0px;color: #575757;opacity: 1;">
+                                                Emergency fund</div>
+                                            <!-- <div class="h7 text-muted">Miracles Lee Cross</div> -->
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <div>
+                                            <!--<div class="text-muted h7 mb-2"> <i class="fa fa-clock-o"></i> Status on 20
+                                                Feb 2022</div>-->
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="card-body" style="margin-top: -20px;">
+                                <div class="row">
+                                    <div class="col-lg-1 col-sm-1">
+                                        <div style="background:#F8F8F8">
+                                            <div class="card-content">
+                                                <div class="row">
+                                                   
+                                                    <!--<span class="col-lg-3 col-sm-3 py-4"><img src="images/arrow.png"/></span>
+                                                    <span class="col-lg-8 col-sm-8 py-4 text-sm"><span>Your emergency fund inhand </span><br/><span style="color: red;font-size: xx-large;">Nill</span> </span>-->
+                                                 
+                                                </div>
+                                            </div>
+                                       
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-10 col-sm-10">
+                                        <div style="background:#F8F8F8">
+                                            <div class="card-content">
+                                                <div class="row">
+                                                   
+                                                    <span class="col-lg-3 col-sm-3 py-4"><img src="images/highlight.png"/></span>
+                                                    <span class="col-lg-8 col-sm-8 py-4 text-sm"><span>Expected status </span><br/><span style="color: red;font-size: xx-large;">{{EmerencyRecommentationDetails}}</span> </span>
+                                                 
+                                                </div>
+                                            </div>
+                                           
+                                        </div>
+                                    </div>
+                                     <div class="col-lg-1 col-sm-1">
+                                        <div style="background:#F8F8F8">
+                                            <div class="card-content">
+                                                <div class="row">
+                                                   
+                                                    <!--<span class="col-lg-3 col-sm-3 py-4"><img src="images/arrow.png"/></span>
+                                                    <span class="col-lg-8 col-sm-8 py-4 text-sm"><span>Your emergency fund inhand </span><br/><span style="color: red;font-size: xx-large;">Nill</span> </span>-->
+                                                 
+                                                </div>
+                                            </div>
+                                       
+                                        </div>
+                                    </div>
+                                   
+                                </div>
+                                <!--<a class="card-link" href="#">
+                                    <h5 class="card-title">OUR RECOMMENDATIONS</h5>
+                                </a>
+
+                                <p class="card-text">
+                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam omnis nihil, aliquam
+                                    est, voluptates officiis iure soluta
+                                    alias vel odit, placeat reiciendis ut libero! Quas aliquid natus cumque quae
+                                    repellendus.
+                                </p>-->
+
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-5">
+                    <div class="card shadow">
+
+                        <div class="card gedf-card">
+                            <div class="card-header">
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <div class="mr-2">
+                                            <img class="rounded-circle" width="45" src="images/Group 11@2x.png" alt="">
+                                        </div>
+                                        <div class="ml-2">
+                                            <div class="m-0"
+                                                style="text-align: left;font: normal normal normal 20px/27px Noto Sans;letter-spacing: 0px;color: #575757;opacity: 1;">
+                                                Health insurance</div>
+                                            <!-- <div class="h7 text-muted">Miracles Lee Cross</div> -->
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <div>
+                                            <!--<div class="text-muted h7 mb-2"> <i class="fa fa-clock-o"></i> Status on 20
+                                                Feb 2022</div>-->
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="card-body" style="margin-top: -20px;">
+                                <div class="row">
+                                    <div class="col-lg-1 col-sm-1">
+                                        <div style="background:#F8F8F8">
+                                            <div class="card-content">
+                                                <div class="row">
+                                                   
+                                                    <!--<span class="col-lg-3 col-sm-3 py-4"><img src="images/arrow.png"/></span>
+                                                    <span class="col-lg-8 col-sm-8 py-4 text-sm"><span>Your Health fund inhand </span><br/><span style="color: red;font-size: xx-large;">Nill</span> </span>-->
+                                                 
+                                                </div>
+                                            </div>
+                                       
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-10 col-sm-10">
+                                        <div style="background:#F8F8F8">
+                                            <div class="card-content">
+                                                <div class="row">
+                                                   
+                                                    <span class="col-lg-3 col-sm-3 py-4"><img src="images/highlight.png"/></span>
+                                                    <span class="col-lg-8 col-sm-8 py-4 text-sm"><span>Expected status </span><br/><span style="color: red;font-size: xx-large;">{{HealthRecommendationDetails}}</span> </span>
+                                                 
+                                                </div>
+                                            </div>
+                                           
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-1 col-sm-1">
+                                        <div style="background:#F8F8F8">
+                                            <div class="card-content">
+                                                <div class="row">
+                                                   
+                                                    <!--<span class="col-lg-3 col-sm-3 py-4"><img src="images/arrow.png"/></span>
+                                                    <span class="col-lg-8 col-sm-8 py-4 text-sm"><span>Your emergency fund inhand </span><br/><span style="color: red;font-size: xx-large;">Nill</span> </span>-->
+                                                 
+                                                </div>
+                                            </div>
+                                       
+                                        </div>
+                                    </div>
+                                </div>
+                               <!-- <a class="card-link" href="#">
+                                    <h5 class="card-title">OUR RECOMMENDATIONS</h5>
+                                </a>
+
+                                <p class="card-text">
+                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam omnis nihil, aliquam
+                                    est, voluptates officiis iure soluta
+                                    alias vel odit, placeat reiciendis ut libero! Quas aliquid natus cumque quae
+                                    repellendus.
+                                </p>-->
+
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="col-md-1"></div>
+            </div>
+
+
+
+            <p class="py-4  text-center"
+                style="text-align: left;font: normal normal bold 30px/41px Noto Sans;letter-spacing: 0px;color: #707070;opacity: 1;">
+                Second level recommendation</p>
+
+            <!--<p class="text-center">Based on your current salary info and savings in hand Lorem ipsum dolor sit amet</p>-->
+            <div class="row">
+             <div class="col-md-1"></div>
+                <div class="col-md-5">
+                    <div class="card shadow">
+                        <div class="card gedf-card">
+                            <div class="card-header">
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <div class="mr-2">
+                                            <img class="rounded-circle" width="45" src="images/Retiremnetplan.png" alt="">
+                                        </div>
+                                        <div class="ml-2">
+                                            <div class="m-0"
+                                                style="text-align: left;font: normal normal normal 20px/27px Noto Sans;letter-spacing: 0px;color: #575757;opacity: 1;">
+                                                Term Insurance</div>
+                                            <!-- <div class="h7 text-muted">Miracles Lee Cross</div> -->
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <div>
+                                            <!--<div class="text-muted h7 mb-2"> <i class="fa fa-clock-o"></i> Status on 20
+                                                Feb 2022</div>-->
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="card-body" style="margin-top: -20px;">
+                                <div class="row">
+                                    <div class="col-lg-1 col-sm-1">
+                                        <div style="background:#F8F8F8">
+                                            <div class="card-content">
+                                                <div class="row">
+                                                 
+                                                    <!--<span class="col-lg-3 col-sm-3 py-4"><img src="images/arrow.png"/></span>
+                                                    <span class="col-lg-8 col-sm-8 py-4 text-sm"><span>Your emergency fund inhand </span><br/><span style="color: red;font-size: xx-large;">Nill</span> </span>-->
+                                                 
+                                                </div>
+                                            </div>
+                                       
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-10 col-sm-10">
+                                        <div style="background:#F8F8F8">
+                                            <div class="card-content">
+                                                <div class="row">
+                                                      <span class="col-lg-3 col-sm-3 py-4"><img src="images/highlight.png"/></span>
+                                                    <span class="col-lg-8 col-sm-8 py-4 text-sm"><span>Expected status </span><br/>
+                                                    <span style="color: red;font-size: xx-large;">{{TermInsuranceValue}}</span> </span>
+                                                 
+                                                    <!--<span class="col-lg-3 col-sm-3 py-4"><img src="images/highlight.png"/></span>
+                                                    <span class="col-lg-8 col-sm-8 py-4 text-sm"><span>Your emergency fund inhand </span><br/><span style="color: red;font-size: xx-large;">90000</span> </span>-->
+                                                 
+                                                </div>
+                                            </div>
+                                           
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-1 col-sm-1">
+                                        <div style="background:#F8F8F8">
+                                            <div class="card-content">
+                                                <div class="row">
+                                                   
+                                                    <!--<span class="col-lg-3 col-sm-3 py-4"><img src="images/arrow.png"/></span>
+                                                    <span class="col-lg-8 col-sm-8 py-4 text-sm"><span>Your emergency fund inhand </span><br/><span style="color: red;font-size: xx-large;">Nill</span> </span>-->
+                                                 
+                                                </div>
+                                            </div>
+                                       
+                                        </div>
+                                    </div>
+                                </div>
+                               <!-- <a class="card-link" href="#">
+                                    <h5 class="card-title">OUR RECOMMENDATIONS</h5>
+                                </a>
+
+                                <p class="card-text">
+                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam omnis nihil, aliquam
+                                    est, voluptates officiis iure soluta
+                                    alias vel odit, placeat reiciendis ut libero! Quas aliquid natus cumque quae
+                                    repellendus.
+                                </p>-->
+
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-5">
+                    <div class="card shadow">
+
+                        <div class="card gedf-card">
+                            <div class="card-header">
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <div class="mr-2">
+                                            <img class="rounded-circle" width="45" src="images/Group 114@2x.png" alt="">
+                                        </div>
+                                        <div class="ml-2">
+                                            <div class="m-0"
+                                                style="text-align: left;font: normal normal normal 20px/27px Noto Sans;letter-spacing: 0px;color: #575757;opacity: 1;">
+                                                Retirement plan</div>
+                                            <!-- <div class="h7 text-muted">Miracles Lee Cross</div> -->
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <div>
+                                            <!--<div class="text-muted h7 mb-2"> <i class="fa fa-clock-o"></i> Status on 20
+                                                Feb 2022</div>-->
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="card-body" style="margin-top: -20px;">
+                                <div class="row">
+                                    <div class="col-lg-1 col-sm-1">
+                                        <div style="background:#F8F8F8">
+                                            <div class="card-content">
+                                                <div class="row">
+                                                   
+                                                    <!--<span class="col-lg-3 col-sm-3 py-4"><img src="images/arrow.png"/></span>
+                                                    <span class="col-lg-8 col-sm-8 py-4 text-sm"><span>Your emergency fund inhand </span><br/><span style="color: red;font-size: xx-large;">Nill</span> </span>-->
+                                                 
+                                                </div>
+                                            </div>
+                                       
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-10 col-sm-10">
+                                        <div style="background:#F8F8F8">
+                                            <div class="card-content">
+                                                <div class="row">
+                                                      <span class="col-lg-3 col-sm-3 py-4"><img src="images/highlight.png"/></span>
+                                                    <span class="col-lg-8 col-sm-8 py-4 text-sm"><span>Expected status </span><br/>
+                                                    <span style="color: red;font-size: xx-large;">{{TermInsuranceValue}}</span> </span>
+                                                 
+                                                    <!--<span class="col-lg-3 col-sm-3 py-4"><img src="images/highlight.png"/></span>
+                                                    <span class="col-lg-8 col-sm-8 py-4 text-sm"><span>Your emergency fund inhand </span><br/><span style="color: red;font-size: xx-large;">90000</span> </span>-->
+                                                 
+                                                </div>
+                                            </div>
+                                           
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-1 col-sm-1">
+                                        <div style="background:#F8F8F8">
+                                            <div class="card-content">
+                                                <div class="row">
+                                                   
+                                                    <!--<span class="col-lg-3 col-sm-3 py-4"><img src="images/arrow.png"/></span>
+                                                    <span class="col-lg-8 col-sm-8 py-4 text-sm"><span>Your emergency fund inhand </span><br/><span style="color: red;font-size: xx-large;">Nill</span> </span>-->
+                                                 
+                                                </div>
+                                            </div>
+                                       
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--<a class="card-link" href="#">
+                                    <h5 class="card-title">{{TermInsuranceValue}}</h5>
+                                </a>
+
+                                <p class="card-text">
+                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam omnis nihil, aliquam
+                                    est, voluptates officiis iure soluta
+                                    alias vel odit, placeat reiciendis ut libero! Quas aliquid natus cumque quae
+                                    repellendus.
+                                </p>-->
+
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                 <div class="col-md-1"></div>
+            </div>
+        <!--</div>-->
+
+        
+
+        <br /><br />
+
+
+        <!-- footer start -->
+        <div ng-include="'Footer.html'"></div>
+        <!-- footer end -->
+
+    </main>
+</div>
+
+
+
+
+
+
+
+
+
+<style>
+    ul.timeline {
+        list-style-type: none;
+        position: relative;
+    }
+
+    ul.timeline:before {
+        content: ' ';
+        background: #d4d9df;
+        display: inline-block;
+        position: absolute;
+        left: 29px;
+        width: 2px;
+        height: 100%;
+        z-index: 400;
+    }
+
+    ul.timeline>li {
+        margin: 20px 0;
+        padding-left: 20px;
+    }
+
+    ul.timeline>li:before {
+        content: ' ';
+        background: white;
+        display: inline-block;
+        position: absolute;
+        border-radius: 50%;
+        border: 3px solid #22c0e8;
+        left: 20px;
+        width: 20px;
+        height: 20px;
+        z-index: 400;
+    }
+</style>
+
+<style>
+    .jumbotron-odi-hero {
+        padding: 0rem 0rem;
+        position: relative;
+        max-width: 100%;
+    }
+
+    .jumbotron-odi-dark {
+        max-width: 100%;
+        padding: 0px;
+    }
+
+    .jumbotron-overlay {
+        height: 100%;
+        padding: 100px 0;
+        color: #fff;
+    }
+
+    .jumbotron-padding {
+        padding-top: 6rem;
+    }
+
+    .btn-circle {
+        border-radius: 30px;
+    }
+
+    .latest-news {
+        border-bottom: .25rem solid transparent;
+        border-bottom-color: #007bff;
+    }
+</style>
+
+<style>
+    .home-main {
+        background: #5812c5;
+        color: #fff;
+        padding: 13%;
+        text-align: center;
+    }
+
+    .blinker {
+        animation: blinker 1.5s linear infinite;
+    }
+
+    @keyframes blinker {
+        50% {
+            opacity: 0;
+        }
+    }
+
+    .home-main button {
+        background: #fff;
+        color: #5812c5;
+        border-radius: 0;
+        font-weight: 700;
+        width: 16%;
+        height: 50px;
+        top: 4%;
+        margin-top: 3%;
+    }
+
+    .home-main button:hover {
+        transition: 1s ease;
+        color: #5812c5;
+        width: 19%;
+    }
+
+    .content1-left {
+        padding: 9%;
+        background: darkturquoise;
+    }
+
+    .content1-right {
+        padding: 9%;
+        background: yellow;
+    }
+
+    .home-content2 {
+        background: #adb5bd;
+        padding: 1.4%;
+        text-align: center;
+    }
+
+    .home-content2 p {
+        font-size: 18px;
+        line-height: 50px;
+    }
+
+    .home-content2 p span {
+        font-weight: 500;
+    }
+
+    ::-webkit-scrollbar {
+        width: 1px !important;
+    }
+</style>
+
+<style>
+    .login-container {
+        margin-top: 5%;
+        margin-bottom: 5%;
+    }
+
+    .login-logo {
+        position: relative;
+        margin-left: -41.5%;
+    }
+
+    .login-logo img {
+        position: absolute;
+        width: 23%;
+        margin-top: 21%;
+        /* background: #282726; */
+        border-radius: 4.5rem;
+        padding: 3%;
+    }
+
+    .login-form-1 {
+        padding: 9%;
+        background: darkturquoise;
+        /*box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 9px 26px 0 rgba(0, 0, 0, 0.19);*/
+    }
+
+    .login-form-1 h3 {
+        text-align: center;
+        margin-bottom: 12%;
+        color: #fff;
+    }
+
+    .login-form-2 {
+        padding: 9%;
+        background: gold;
+        /*box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 9px 26px 0 rgba(0, 0, 0, 0.19);*/
+    }
+
+    .login-form-2 h3 {
+        text-align: center;
+        margin-bottom: 12%;
+        color: #fff;
+    }
+
+    .btnSubmit {
+        font-weight: 600;
+        width: 50%;
+        color: #282726;
+        background-color: #fff;
+        border: none;
+        border-radius: 1.5rem;
+        padding: 2%;
+    }
+
+    .btnForgetPwd {
+        color: #fff;
+        font-weight: 600;
+        text-decoration: none;
+    }
+
+    .btnForgetPwd:hover {
+        text-decoration: none;
+        color: #fff;
+    }
+</style>
