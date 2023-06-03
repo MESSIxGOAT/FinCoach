@@ -1,0 +1,417 @@
+﻿//Local Url
+var globalUrl = "http://13.233.85.98/Troop/Common/";
+
+
+var mainApp = angular.module('haryana.services', [])
+
+
+
+mainApp.service('dataService', function () {
+
+    var cache;
+    
+    this.saveData = function (data) {
+        cache = data;
+    };
+
+    this.retrieveData = function () {
+        return cache;
+    };
+
+});
+
+
+
+
+    mainApp.service('Auth', function () {
+        var user;
+
+        return {
+            setUser: function (aUser) {
+                user = aUser;
+            },
+            isLoggedIn: function () {
+                return (user) ? user : false;
+            }
+        }
+    })
+    mainApp.service('StorageService', function ($localStorage) {
+        $localStorage = $localStorage.$default({
+            things: []
+        });
+        var _getAll = function () {
+            return $localStorage.things;
+        };
+        var _add = function (thing) {
+            $localStorage.things.push(thing);
+        }
+        var _remove = function (thing) {
+            $localStorage.things.splice($localStorage.things.indexOf(thing), 1);
+        }
+        var _removeall = function (thing) {
+            $localStorage.things = [];
+            return $localStorage.things;
+        }
+        return {
+            getAll: _getAll,
+            add: _add,
+            remove: _remove,
+            removeall: _removeall
+        };
+    })
+    mainApp.service('sessionService', ['$http', function ($http) {
+        return {
+            set: function (key, value) {
+                return sessionStorage.setItem(key, value);
+            },
+            get: function (key) {
+                return sessionStorage.getItem(key);
+            },
+            destroy: function (key) {
+                return sessionStorage.removeItem(key);
+            }
+        };
+    }])
+
+
+
+
+   
+     mainApp.service('InsertConsumerDetails', function ($http) {
+         this.ConsumerDetailsmethod = function (request) {
+             return $http({
+                 method: 'POST',
+                 headers: { 'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8' },
+                 data: request,
+                 transformResponse: undefined,
+                 responseType: 'text',
+                 url: globalUrl + "InsertConsumerDetails.php",
+             });
+         };
+
+     })
+     mainApp.service('InsertVendorDetails', function ($http) {
+         this.VendorDetails = function (VendorObject) {
+             return $http({
+                 method: 'POST',
+                 headers: { 'Content-Type': 'application/json; charset=utf-8' },
+                 dataType: 'json',
+                 data: VendorObject,
+                 transformResponse: undefined,
+                 responseType: 'text',
+                 url: globalUrl + "InsertVendorDetails.php",
+             });
+         };
+     })
+     mainApp.service('InsertLogistics', function ($http) {
+        this.InsertLogisticsDetails = function (LogisticsObject) {
+            return $http({
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json; charset=utf-8' },
+                dataType: 'json',
+                data: LogisticsObject,
+                transformResponse: undefined,
+                responseType: 'text',
+                url: globalUrl + "InsertLogistics.php",
+            });
+        };
+    })
+    mainApp.service('UpdateLogistics', function ($http) {
+        this.InsertLogisticsDetails = function (LogisticsObject) {
+            return $http({
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json; charset=utf-8' },
+                dataType: 'json',
+                data: LogisticsObject,
+                transformResponse: undefined,
+                responseType: 'text',
+                url: globalUrl + "UpdateLogistics.php",
+            });
+        };
+    })
+    mainApp.service('InsertRoleMaster', function ($http) {
+        this.InsertRoleManagementDetails = function (RoleManagementObject) {
+            return $http({
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json; charset=utf-8' },
+                dataType: 'json',
+                data: RoleManagementObject,
+                transformResponse: undefined,
+                responseType: 'text',
+                url: globalUrl + "InsertRoleMaster.php",
+            });
+        };
+    })
+    mainApp.service('UpdateRoleMaster', function ($http) {
+        this.InsertRoleManagementDetails = function (RoleManagementObject) {
+            return $http({
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json; charset=utf-8' },
+                dataType: 'json',
+                data: RoleManagementObject,
+                transformResponse: undefined,
+                responseType: 'text',
+                url: globalUrl + "UpdateRoleMaster.php",
+            });
+        };
+    })
+
+
+     mainApp.service('InsertAddress', function ($http) {
+         this.VendorAddressDetails = function (VendorObject) {
+             return $http({
+                 method: 'POST',
+                 headers: { 'Content-Type': 'application/json; charset=utf-8' },
+                 dataType: 'json',
+                 data: VendorObject,
+                 transformResponse: undefined,
+                 responseType: 'text',
+                 url: globalUrl + "InsertAddress.php",
+             });
+         };
+     })
+     mainApp.service('InsertVendorCapacity', function ($http) {
+         this.VendorCapacityDetails = function (VendorObject) {
+             return $http({
+                 method: 'POST',
+                 headers: { 'Content-Type': 'application/json; charset=utf-8' },
+                 dataType: 'json',
+                 data: VendorObject,
+                 transformResponse: undefined,
+                 responseType: 'text',
+                 url: globalUrl + "InsertVendorCapacity.php",
+             });
+         };
+     })
+     mainApp.service('InsertProduct', function ($http) {
+         this.ProductDetails = function (selectedCount, name, description, status) {
+
+             return $http({
+                 method: 'POST',
+                 headers: {
+                     'Content-Type': undefined
+                 },
+                 file: file,
+                 transformResponse: undefined,
+                 data: selectedCount,
+                 url: globalUrl + "InsertProduct.php?name=" + name + "&description=" + description + "&status=" + status,
+             });
+         };
+     })
+
+
+     mainApp.service('InsertRateCard', function ($http) {
+         this.RateCardDetails = function (selectedCount, productId, imageDescription, userDescription, vendorPrice, customerPrice, status, quantity) {
+
+             return $http({
+                 method: 'POST',
+                 headers: {
+                     'Content-Type': undefined
+                 },
+                 file: file,
+                 transformResponse: undefined,
+                 data: selectedCount,
+                 url: globalUrl + "InsertRateCard.php?productId=" + productId + "&imageDescription=" + imageDescription + "&userDescription=" + userDescription + "&vendorPrice=" + vendorPrice + "&customerPrice=" + customerPrice + "&status=" + status + "&quantity=" + quantity,
+             });
+         };
+     })
+
+ 
+
+     mainApp.service('InsertVendorAvailability', function ($http) {
+         this.VendorAvailabilityDetails = function (vendorAvailability) {
+             return $http({
+                 method: 'POST',
+                 headers: { 'Content-Type': 'application/json; charset=utf-8' },
+                 dataType: 'json',
+                 data: vendorAvailability,
+                 transformResponse: undefined,
+                 responseType: 'text',
+                 url: globalUrl + "InsertVendorAvailability.php",
+             });
+         };
+     })
+
+
+
+     mainApp.service('UpdateVendorAvailability', function ($http) {
+         this.VendorAvailabilityDetails = function (vendorAvailability) {
+             return $http({
+                 method: 'POST',
+                 headers: { 'Content-Type': 'application/json; charset=utf-8' },
+                 dataType: 'json',
+                 data: vendorAvailability,
+                 transformResponse: undefined,
+                 responseType: 'text',
+                 url: globalUrl + "UpdateVendorAvailability.php",
+             });
+         };
+     })
+
+     mainApp.service('UpdateServiceDetails', function ($http) {
+         this.ServiceDetails = function (request) {
+             return $http({
+                 method: 'POST',
+                 headers: { 'Content-Type': 'application/json; charset=utf-8' },
+                 dataType: 'json',
+                 data: request,
+                 transformResponse: undefined,
+                 responseType: 'text',
+                 url: globalUrl + "UpdateServiceDetails.php",
+             });
+         };
+     })
+
+     mainApp.service('UpdateProduct', function ($http) {
+         this.ProductDetails = function (ProductObject) {
+             return $http({
+                 method: 'POST',
+                 headers: { 'Content-Type': 'application/json; charset=utf-8' },
+                 dataType: 'json',
+                 data: ProductObject,
+                 transformResponse: undefined,
+                 responseType: 'text',
+                 url: globalUrl + "UpdateProduct.php",
+             });
+         };
+     })
+
+     mainApp.service('UpdateRateCard', function ($http) {
+         this.RateCardDetails = function (ProductToolObject) {
+             return $http({
+                 method: 'POST',
+                 headers: { 'Content-Type': 'application/json; charset=utf-8' },
+                 dataType: 'json',
+                 data: ProductToolObject,
+                 transformResponse: undefined,
+                 responseType: 'text',
+                 url: globalUrl + "UpdateRateCard.php",
+             });
+         };
+     })
+
+     mainApp.service('UpdateVendorCapacity', function ($http) {
+         this.VendorCapacityDetails = function (request) {
+             return $http({
+                 method: 'POST',
+                 headers: { 'Content-Type': 'application/json; charset=utf-8' },
+                 dataType: 'json',
+                 data: request,
+                 transformResponse: undefined,
+                 responseType: 'text',
+                 url: globalUrl + "UpdateVendorCapacity.php",
+             });
+         };
+     })
+
+     mainApp.service('UpdateVendorDetails', function ($http) {
+         this.VendorDetails = function (request) {
+             return $http({
+                 method: 'POST',
+                 headers: { 'Content-Type': 'application/json; charset=utf-8' },
+                 dataType: 'json',
+                 data: request,
+                 transformResponse: undefined,
+                 responseType: 'text',
+                 url: globalUrl + "UpdateVendorDetails.php",
+             });
+         };
+     })
+
+
+  
+
+
+     mainApp.service('GetAllServicesByStatus', function ($http) {
+         this.ServiceDetails = function (request) {
+             return $http({
+                 method: 'POST',
+                 headers: { 'Content-Type': 'application/json; charset=utf-8' },
+                 dataType: 'json',
+                 transformResponse: undefined,
+                 responseType: 'text',
+                 url: globalUrl + "GetAllServicesByStatus.php?status="+request,
+             });
+         };
+     })
+
+
+mainApp.service('GetServiceDetailsByServiceId', function ($http) {
+    this.ServiceDetails = function (request) {
+        return $http({
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json; charset=utf-8' },
+            dataType: 'json',
+            transformResponse: undefined,
+            responseType: 'text',
+            url: globalUrl + "GetServiceDetailsByServiceId.php?serviceId=" + request,
+        });
+    };
+})
+
+mainApp.service('GetAllReportServices', function ($http) {
+    this.ServiceDetails = function (request) {
+        return $http({
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json; charset=utf-8' },
+            dataType: 'json',
+            transformResponse: undefined,
+            responseType: 'text',
+            url: globalUrl + "GetAllReportServices.php",
+        });
+    };
+})
+
+mainApp.service('UpdateCancelStatus', function ($http) {
+    this.ServiceDetails = function (request) {
+        return $http({
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json; charset=utf-8' },
+            dataType: 'json',
+            data: request,
+            transformResponse: undefined,
+            responseType: 'text',
+            url: globalUrl + "UpdateCancelStatus.php",
+        });
+    };
+})
+
+mainApp.service('GetAllCancelledServices', function ($http) {
+    this.ServiceDetails = function (request) {
+        return $http({
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json; charset=utf-8' },
+            dataType: 'json',
+            transformResponse: undefined,
+            responseType: 'text',
+            url: globalUrl + "GetAllCancelledServices.php",
+        });
+    };
+})
+
+mainApp.service('InsertLogistics', function ($http) {
+    this.InsertLogisticsDetails = function (LogisticsObject) {
+        return $http({
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json; charset=utf-8' },
+            dataType: 'json',
+            data: LogisticsObject,
+            transformResponse: undefined,
+            responseType: 'text',
+            url: globalUrl + "InsertLogistics.php",
+        });
+    };
+})
+mainApp.service('UpdateLogistics', function ($http) {
+    this.InsertLogisticsDetails = function (LogisticsObject) {
+        return $http({
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json; charset=utf-8' },
+            dataType: 'json',
+            data: LogisticsObject,
+            transformResponse: undefined,
+            responseType: 'text',
+            url: globalUrl + "UpdateLogistics.php",
+        });
+    };
+})
