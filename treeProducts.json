@@ -1,0 +1,26 @@
+[
+  {
+    "ID": 1,
+    "name": "Profile",
+    "expanded": false
+  },
+  {
+    "ID": "1_1",
+    "categoryId": 1,
+    "name": "P1111",
+    "expanded": false
+  },
+
+
+  {
+    "ID": 2,
+    "name": "ProfileT2",
+    "expanded": false
+  },
+  {
+    "ID": "2_1",
+    "categoryId": 2,
+    "name": "P2222",
+    "expanded": false
+  }
+]
