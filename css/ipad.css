@@ -1,0 +1,91 @@
+@media screen and (min-device-width: 481px) and (max-device-width: 768px) {
+     ipad {
+     display: none;
+   }
+    
+        .submitted .ng-invalid{
+            border: 1px solid red !important;
+        }
+    .header a.gallery {
+        margin-left: 6%;
+    }
+
+    .logout-dropDown {
+        display: none;
+        width: 100%;
+        position: fixed;
+        top: 85px;
+        right: 0px;
+        z-index: 98;
+        overflow: hidden;
+        border: 3px solid orange;
+        background: white;
+    }
+
+    .logout-dropDown {
+        display: none;
+        width: 100%;
+        position: fixed;
+        top: 85px;
+        right: 0px;
+        z-index: 98;
+        overflow: hidden;
+        border: 3px solid orange;
+        background: white;
+    }
+
+    .white-panel {
+        background-color: rgba(255,255, 255, 1);
+        height: 600px;
+        position: absolute;
+        /* top: 53px; */
+        width: 100%;
+        /* right: calc(2% - 100px); */
+        transition: .3s ease-in-out;
+        z-index: 0;
+        box-shadow: 0 0 15px 9px lightgrey;
+    }
+
+    
+        /*table class Start*/
+        table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+
+  /*table class End*/
+  .btn-design {
+    width: 35% !important;
+    height: 50px !important;
+    border: 1px solid black !important;
+    color: black !important;
+    background: white !important;
+
+    display: inline-block;
+    font-weight: 400;
+    color: #212529;
+    text-align: center;
+    vertical-align: middle;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background-color: transparent;
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    border-radius: .25rem;
+    transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+}
